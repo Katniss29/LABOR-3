@@ -30,7 +30,6 @@
         {
             this.btnMostrarClientes = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clmIDCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,18 +40,16 @@
             this.txtSexo = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lbFechaNacimiento = new System.Windows.Forms.Label();
             this.lbCedula = new System.Windows.Forms.Label();
             this.lbSexo = new System.Windows.Forms.Label();
             this.lbAPELLIDO = new System.Windows.Forms.Label();
             this.lbNombre = new System.Windows.Forms.Label();
-            this.lbCodigo = new System.Windows.Forms.Label();
             this.lbInterfazClientes = new System.Windows.Forms.Label();
             this.btnInsertarDatos = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtCodigoBuscar = new System.Windows.Forms.TextBox();
-            this.lbCodigoBuscar = new System.Windows.Forms.Label();
+            this.txtCedukaBuscar = new System.Windows.Forms.TextBox();
+            this.lbCedularBuscar = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnModificar = new System.Windows.Forms.Button();
             this.txtNombreEliminar = new System.Windows.Forms.TextBox();
@@ -77,7 +74,6 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.clmIDCliente,
             this.clmCedula,
             this.clmNombre,
             this.clmApellido,
@@ -89,13 +85,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(530, 160);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // clmIDCliente
-            // 
-            this.clmIDCliente.HeaderText = "ID CLIENTE";
-            this.clmIDCliente.MinimumWidth = 6;
-            this.clmIDCliente.Name = "clmIDCliente";
-            this.clmIDCliente.Width = 125;
             // 
             // clmCedula
             // 
@@ -135,7 +124,7 @@
             // txtFecha
             // 
             this.txtFecha.AcceptsTab = true;
-            this.txtFecha.Location = new System.Drawing.Point(196, 416);
+            this.txtFecha.Location = new System.Drawing.Point(188, 391);
             this.txtFecha.Margin = new System.Windows.Forms.Padding(4);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Size = new System.Drawing.Size(124, 25);
@@ -143,7 +132,7 @@
             // 
             // txtCedula
             // 
-            this.txtCedula.Location = new System.Drawing.Point(196, 182);
+            this.txtCedula.Location = new System.Drawing.Point(188, 157);
             this.txtCedula.Margin = new System.Windows.Forms.Padding(4);
             this.txtCedula.Name = "txtCedula";
             this.txtCedula.Size = new System.Drawing.Size(124, 25);
@@ -151,7 +140,7 @@
             // 
             // txtSexo
             // 
-            this.txtSexo.Location = new System.Drawing.Point(196, 362);
+            this.txtSexo.Location = new System.Drawing.Point(188, 337);
             this.txtSexo.Margin = new System.Windows.Forms.Padding(4);
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.Size = new System.Drawing.Size(124, 25);
@@ -159,7 +148,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(196, 303);
+            this.txtApellido.Location = new System.Drawing.Point(188, 278);
             this.txtApellido.Margin = new System.Windows.Forms.Padding(4);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(124, 25);
@@ -167,24 +156,16 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(196, 245);
+            this.txtNombre.Location = new System.Drawing.Point(188, 220);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(124, 25);
             this.txtNombre.TabIndex = 25;
             // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(196, 113);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(124, 25);
-            this.txtCodigo.TabIndex = 24;
-            // 
             // lbFechaNacimiento
             // 
             this.lbFechaNacimiento.AutoSize = true;
-            this.lbFechaNacimiento.Location = new System.Drawing.Point(17, 416);
+            this.lbFechaNacimiento.Location = new System.Drawing.Point(9, 391);
             this.lbFechaNacimiento.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbFechaNacimiento.Name = "lbFechaNacimiento";
             this.lbFechaNacimiento.Size = new System.Drawing.Size(150, 17);
@@ -194,7 +175,7 @@
             // lbCedula
             // 
             this.lbCedula.AutoSize = true;
-            this.lbCedula.Location = new System.Drawing.Point(101, 182);
+            this.lbCedula.Location = new System.Drawing.Point(93, 157);
             this.lbCedula.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbCedula.Name = "lbCedula";
             this.lbCedula.Size = new System.Drawing.Size(66, 17);
@@ -205,7 +186,7 @@
             // 
             this.lbSexo.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.lbSexo.AutoSize = true;
-            this.lbSexo.Location = new System.Drawing.Point(83, 362);
+            this.lbSexo.Location = new System.Drawing.Point(75, 337);
             this.lbSexo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbSexo.Name = "lbSexo";
             this.lbSexo.Size = new System.Drawing.Size(45, 17);
@@ -215,7 +196,7 @@
             // lbAPELLIDO
             // 
             this.lbAPELLIDO.AutoSize = true;
-            this.lbAPELLIDO.Location = new System.Drawing.Point(83, 303);
+            this.lbAPELLIDO.Location = new System.Drawing.Point(75, 278);
             this.lbAPELLIDO.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbAPELLIDO.Name = "lbAPELLIDO";
             this.lbAPELLIDO.Size = new System.Drawing.Size(78, 17);
@@ -225,22 +206,12 @@
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(101, 245);
+            this.lbNombre.Location = new System.Drawing.Point(93, 220);
             this.lbNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(69, 17);
             this.lbNombre.TabIndex = 18;
             this.lbNombre.Text = "NOMBRE";
-            // 
-            // lbCodigo
-            // 
-            this.lbCodigo.AutoSize = true;
-            this.lbCodigo.Location = new System.Drawing.Point(101, 116);
-            this.lbCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbCodigo.Name = "lbCodigo";
-            this.lbCodigo.Size = new System.Drawing.Size(67, 17);
-            this.lbCodigo.TabIndex = 17;
-            this.lbCodigo.Text = "CODIGO";
             // 
             // lbInterfazClientes
             // 
@@ -261,6 +232,7 @@
             this.btnInsertarDatos.TabIndex = 32;
             this.btnInsertarDatos.Text = "INSERTAR CLIENTES";
             this.btnInsertarDatos.UseVisualStyleBackColor = true;
+            this.btnInsertarDatos.Click += new System.EventHandler(this.btnInsertarDatos_Click);
             // 
             // btnBuscar
             // 
@@ -271,24 +243,25 @@
             this.btnBuscar.TabIndex = 36;
             this.btnBuscar.Text = "BUSCAR CLIENTE";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // txtCodigoBuscar
+            // txtCedukaBuscar
             // 
-            this.txtCodigoBuscar.Location = new System.Drawing.Point(802, 162);
-            this.txtCodigoBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.txtCodigoBuscar.Name = "txtCodigoBuscar";
-            this.txtCodigoBuscar.Size = new System.Drawing.Size(124, 25);
-            this.txtCodigoBuscar.TabIndex = 35;
+            this.txtCedukaBuscar.Location = new System.Drawing.Point(802, 162);
+            this.txtCedukaBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCedukaBuscar.Name = "txtCedukaBuscar";
+            this.txtCedukaBuscar.Size = new System.Drawing.Size(124, 25);
+            this.txtCedukaBuscar.TabIndex = 35;
             // 
-            // lbCodigoBuscar
+            // lbCedularBuscar
             // 
-            this.lbCodigoBuscar.AutoSize = true;
-            this.lbCodigoBuscar.Location = new System.Drawing.Point(695, 165);
-            this.lbCodigoBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbCodigoBuscar.Name = "lbCodigoBuscar";
-            this.lbCodigoBuscar.Size = new System.Drawing.Size(67, 17);
-            this.lbCodigoBuscar.TabIndex = 34;
-            this.lbCodigoBuscar.Text = "CODIGO";
+            this.lbCedularBuscar.AutoSize = true;
+            this.lbCedularBuscar.Location = new System.Drawing.Point(695, 165);
+            this.lbCedularBuscar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbCedularBuscar.Name = "lbCedularBuscar";
+            this.lbCedularBuscar.Size = new System.Drawing.Size(66, 17);
+            this.lbCedularBuscar.TabIndex = 34;
+            this.lbCedularBuscar.Text = "CEDULA";
             // 
             // label3
             // 
@@ -335,9 +308,9 @@
             this.label2.Location = new System.Drawing.Point(669, 473);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(460, 17);
+            this.label2.Size = new System.Drawing.Size(411, 17);
             this.label2.TabIndex = 38;
-            this.label2.Text = "INGRESE EL NOMBRE DEL MEDICAMENTO QUE DESEA ELIMINAR ";
+            this.label2.Text = "INGRESE EL NOMBRE DEL CLIENTE QUE DESEA ELIMINAR ";
             // 
             // btnEliminar
             // 
@@ -348,6 +321,7 @@
             this.btnEliminar.TabIndex = 41;
             this.btnEliminar.Text = "ELIMINAR CLIENTES";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // MantenimientoClientes
             // 
@@ -360,8 +334,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtCodigoBuscar);
-            this.Controls.Add(this.lbCodigoBuscar);
+            this.Controls.Add(this.txtCedukaBuscar);
+            this.Controls.Add(this.lbCedularBuscar);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnInsertarDatos);
             this.Controls.Add(this.lbInterfazClientes);
@@ -370,13 +344,11 @@
             this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.lbFechaNacimiento);
             this.Controls.Add(this.lbCedula);
             this.Controls.Add(this.lbSexo);
             this.Controls.Add(this.lbAPELLIDO);
             this.Controls.Add(this.lbNombre);
-            this.Controls.Add(this.lbCodigo);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnMostrarClientes);
             this.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -394,34 +366,31 @@
 
         private System.Windows.Forms.Button btnMostrarClientes;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmIDCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmCedula;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmApellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmSexo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaNacimiento;
         private System.Windows.Forms.TextBox txtFecha;
         private System.Windows.Forms.TextBox txtCedula;
         private System.Windows.Forms.TextBox txtSexo;
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label lbFechaNacimiento;
         private System.Windows.Forms.Label lbCedula;
         private System.Windows.Forms.Label lbSexo;
         private System.Windows.Forms.Label lbAPELLIDO;
         private System.Windows.Forms.Label lbNombre;
-        private System.Windows.Forms.Label lbCodigo;
         private System.Windows.Forms.Label lbInterfazClientes;
         private System.Windows.Forms.Button btnInsertarDatos;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox txtCodigoBuscar;
-        private System.Windows.Forms.Label lbCodigoBuscar;
+        private System.Windows.Forms.TextBox txtCedukaBuscar;
+        private System.Windows.Forms.Label lbCedularBuscar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.TextBox txtNombreEliminar;
         private System.Windows.Forms.Label lbNombreEliminar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmCedula;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmSexo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaNacimiento;
     }
 }

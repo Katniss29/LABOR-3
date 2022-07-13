@@ -55,12 +55,9 @@ namespace LABOR_3
         public bool validacionDeDatos()
         {
             bool datosCorrectos = true;
-            if (txtCodigo.Text == String.Empty)
-            {
-                datosCorrectos = false;
-
-            }
-            else if (txtCedula.Text == String.Empty)
+            
+            
+            if (txtCedula.Text == String.Empty)
             {
                 datosCorrectos = false;
             }
@@ -114,6 +111,89 @@ namespace LABOR_3
             txtApellido.Text = "";
             txtSexo.Text = "";
             txtFecha.Text = "";
+        }
+
+        private void btnInsertarDatos_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (validacionDeDatos() == true)
+                {
+                    String cadena = "INSERT INTO CLIENTES (CEDULA,NOMBRE,APELLIDO,SEXO,FECHANACIMIENTO) " +
+                                  "VALUES('" + txtCedula.Text + "', '" + txtNombre.Text + "', '" + txtApellido.Text + "','" + txtSexo.Text + "','" + txtFecha.Text + "')";
+                    CONEXIO.conectarPostgresSQL();
+                    NpgsqlCommand comando = new NpgsqlCommand(cadena, CONEXIO.conexion);
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("EL MEDICAMENTO: " + txtNombre.Text + " SE HA AGREGADO CORRECTAMENTE");
+
+                    limpiarDatos();
+
+                    refrescar();
+                    CONEXIO.desconectarPostgresSQL();
+
+                    MessageBox.Show("Cliente insertado con exito");
+                }
+                else
+                {
+                    MessageBox.Show("Error, ingrese los datos correctos");
+                }
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error, el cliente no se a logrado guardar");
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                String eliminar = "delete from clientes where nombre = '" + txtNombreEliminar.Text + "'";
+                CONEXIO.conectarPostgresSQL();
+                NpgsqlCommand comando = new NpgsqlCommand(eliminar, CONEXIO.conexion);
+                comando.ExecuteNonQuery();
+                MessageBox.Show("MEDICAMENTO " + txtNombreEliminar.Text + " ELIMINADO");
+                refrescar();
+                CONEXIO.desconectarPostgresSQL();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ERROR, NO SE LOGRO ELIMINAR EL CLIENTE");
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NpgsqlConnection conexionBD = CONEXIO.conexion;
+                conexionBD.Open();
+                NpgsqlCommand comando = new NpgsqlCommand();
+                comando.Connection = conexionBD;
+                comando.CommandText = "select * from clientes  where cedula = " + txtCedukaBuscar.Text + "";
+                NpgsqlDataReader leer = comando.ExecuteReader();
+                if (leer.Read() == true)
+                {
+                    txtCedula.Text = leer["cedula"].ToString();
+                    txtNombre.Text = leer["nombre"].ToString();
+                    txtApellido.Text = leer["apellido"].ToString();
+                    txtSexo.Text = leer["sexo"].ToString();
+                    txtFecha.Text = leer["fechanacimiento"].ToString();
+                    
+                }
+                else
+                {
+                    MessageBox.Show("El registro no existe");
+                }
+
+                CONEXIO.desconectarPostgresSQL();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("ERROR");
+            }
         }
     }
 }
