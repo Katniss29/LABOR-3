@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnMantenimientoClientes = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMantenimientoClientes
@@ -42,11 +43,22 @@
             this.btnMantenimientoClientes.UseVisualStyleBackColor = true;
             this.btnMantenimientoClientes.Click += new System.EventHandler(this.btnMantenimientoClientes_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(348, 205);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(267, 92);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "CATALOGO PRODUCTOS";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 556);
+            this.ClientSize = new System.Drawing.Size(1136, 556);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnMantenimientoClientes);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -60,6 +72,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnMantenimientoClientes;
+        private System.Windows.Forms.Button button1;
     }
 }
 

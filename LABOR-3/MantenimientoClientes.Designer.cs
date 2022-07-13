@@ -309,6 +309,7 @@
             this.btnModificar.TabIndex = 37;
             this.btnModificar.Text = "MODIFICAR CLIENTES";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // txtNombreEliminar
             // 
