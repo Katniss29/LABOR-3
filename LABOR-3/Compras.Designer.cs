@@ -152,7 +152,7 @@
             this.button2.TabIndex = 44;
             this.button2.Text = "ELIMINAR COMPRA";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+           
             // 
             // txtCompras
             // 
@@ -161,7 +161,7 @@
             this.txtCompras.Name = "txtCompras";
             this.txtCompras.Size = new System.Drawing.Size(124, 22);
             this.txtCompras.TabIndex = 53;
-            this.txtCompras.TextChanged += new System.EventHandler(this.txtCedula_TextChanged);
+            
             // 
             // txtFechaCompra
             // 
@@ -170,7 +170,7 @@
             this.txtFechaCompra.Name = "txtFechaCompra";
             this.txtFechaCompra.Size = new System.Drawing.Size(124, 22);
             this.txtFechaCompra.TabIndex = 52;
-            this.txtFechaCompra.TextChanged += new System.EventHandler(this.txtSexo_TextChanged);
+          
             // 
             // txtIDProducto
             // 
@@ -179,7 +179,7 @@
             this.txtIDProducto.Name = "txtIDProducto";
             this.txtIDProducto.Size = new System.Drawing.Size(124, 22);
             this.txtIDProducto.TabIndex = 51;
-            this.txtIDProducto.TextChanged += new System.EventHandler(this.txtApellido_TextChanged);
+            
             // 
             // txtidCliente
             // 
@@ -188,7 +188,7 @@
             this.txtidCliente.Name = "txtidCliente";
             this.txtidCliente.Size = new System.Drawing.Size(124, 22);
             this.txtidCliente.TabIndex = 50;
-            this.txtidCliente.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
+            
             // 
             // lbCompra1
             // 
@@ -210,7 +210,7 @@
             this.lbFechaCompra.Size = new System.Drawing.Size(113, 16);
             this.lbFechaCompra.TabIndex = 47;
             this.lbFechaCompra.Text = "FECHA COMPRA";
-            this.lbFechaCompra.Click += new System.EventHandler(this.lbSexo_Click);
+          
             // 
             // lbIDProcto
             // 
@@ -221,7 +221,7 @@
             this.lbIDProcto.Size = new System.Drawing.Size(100, 16);
             this.lbIDProcto.TabIndex = 46;
             this.lbIDProcto.Text = "ID PRODUCTO";
-            this.lbIDProcto.Click += new System.EventHandler(this.lbAPELLIDO_Click);
+         
             // 
             // lbIDCliente
             // 
@@ -233,7 +233,7 @@
             this.lbIDCliente.TabIndex = 45;
             this.lbIDCliente.Text = "ID CLIENTE";
             this.lbIDCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbIDCliente.Click += new System.EventHandler(this.lbNombre_Click);
+            
             // 
             // button3
             // 
