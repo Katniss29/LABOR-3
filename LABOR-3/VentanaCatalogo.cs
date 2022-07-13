@@ -43,5 +43,12 @@ namespace LABOR_3
         {
             refrescar();
         }
+
+        private void VentanaCatalogo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.Hide();
+            VentanaPrincipal oVentanaPrincipal = new VentanaPrincipal();
+            oVentanaPrincipal.Show();
+        }
     }
 }
