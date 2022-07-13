@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.btnMantenimientoClientes = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCatalogo = new System.Windows.Forms.Button();
+            this.btnCompras = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMantenimientoClientes
             // 
-            this.btnMantenimientoClientes.Location = new System.Drawing.Point(26, 205);
+            this.btnMantenimientoClientes.Location = new System.Drawing.Point(36, 122);
             this.btnMantenimientoClientes.Margin = new System.Windows.Forms.Padding(4);
             this.btnMantenimientoClientes.Name = "btnMantenimientoClientes";
             this.btnMantenimientoClientes.Size = new System.Drawing.Size(267, 92);
@@ -43,22 +44,34 @@
             this.btnMantenimientoClientes.UseVisualStyleBackColor = true;
             this.btnMantenimientoClientes.Click += new System.EventHandler(this.btnMantenimientoClientes_Click);
             // 
-            // button1
+            // btnCatalogo
             // 
-            this.button1.Location = new System.Drawing.Point(348, 205);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(267, 92);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "CATALOGO PRODUCTOS";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCatalogo.Location = new System.Drawing.Point(362, 122);
+            this.btnCatalogo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCatalogo.Name = "btnCatalogo";
+            this.btnCatalogo.Size = new System.Drawing.Size(267, 92);
+            this.btnCatalogo.TabIndex = 1;
+            this.btnCatalogo.Text = "CATALOGO PRODUCTOS";
+            this.btnCatalogo.UseVisualStyleBackColor = true;
+            this.btnCatalogo.Click += new System.EventHandler(this.btnCatalogo_Click);
+            // 
+            // btnCompras
+            // 
+            this.btnCompras.Location = new System.Drawing.Point(705, 122);
+            this.btnCompras.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCompras.Name = "btnCompras";
+            this.btnCompras.Size = new System.Drawing.Size(267, 92);
+            this.btnCompras.TabIndex = 2;
+            this.btnCompras.Text = "COMPRAS ";
+            this.btnCompras.UseVisualStyleBackColor = true;
             // 
             // VentanaPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1136, 556);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1007, 354);
+            this.Controls.Add(this.btnCompras);
+            this.Controls.Add(this.btnCatalogo);
             this.Controls.Add(this.btnMantenimientoClientes);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -72,7 +85,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnMantenimientoClientes;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCatalogo;
+        private System.Windows.Forms.Button btnCompras;
     }
 }
 

@@ -24,5 +24,12 @@ namespace LABOR_3
             MantenimientoClientes oMantenimientoClientes = new MantenimientoClientes();
             oMantenimientoClientes.Show();
         }
+
+        private void btnCatalogo_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            VentanaCatalogo oVentanaCatalogo = new VentanaCatalogo();
+            oVentanaCatalogo.Show();
+        }
     }
 }

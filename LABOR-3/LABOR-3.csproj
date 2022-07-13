@@ -91,6 +91,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="VentanaCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentanaCatalogo.Designer.cs">
+      <DependentUpon>VentanaCatalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="MantenimientoClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +123,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="VentanaCatalogo.resx">
+      <DependentUpon>VentanaCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
