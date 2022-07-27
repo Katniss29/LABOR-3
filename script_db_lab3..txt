@@ -1,0 +1,32 @@
+CREATE TABLE CLIENTES(
+    IDCliente int not null primary key,
+    Cedula int,
+    Nombre varchar(50),
+    Apellido varchar(50),
+    Sexo char,
+    FechaNacimiento varchar(50)
+
+);
+
+CREATE TABLE PRODUCTOS(
+    IDProducto int not null primary key,
+    Descripcion varchar(250),
+    precio double precision 
+
+);
+
+CREATE TABLE COMPRAS(
+    IDCompras int not null primary key,
+    IDCliente int,
+    IDProducto int,
+    FechaCompra varchar(50)
+  
+);
+
+alter table compras add constraint FKtest 
+foreign key (IDCliente) references CLIENTES (IDCliente)
+
+alter table compras add constraint FKproducto
+foreign key (IDProducto) references PRODUCTOS (IDProducto)
+
+
