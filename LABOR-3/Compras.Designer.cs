@@ -152,7 +152,6 @@
             this.button2.TabIndex = 44;
             this.button2.Text = "ELIMINAR COMPRA";
             this.button2.UseVisualStyleBackColor = true;
-           
             // 
             // txtCompras
             // 
@@ -161,7 +160,6 @@
             this.txtCompras.Name = "txtCompras";
             this.txtCompras.Size = new System.Drawing.Size(124, 22);
             this.txtCompras.TabIndex = 53;
-            
             // 
             // txtFechaCompra
             // 
@@ -170,7 +168,6 @@
             this.txtFechaCompra.Name = "txtFechaCompra";
             this.txtFechaCompra.Size = new System.Drawing.Size(124, 22);
             this.txtFechaCompra.TabIndex = 52;
-          
             // 
             // txtIDProducto
             // 
@@ -179,7 +176,6 @@
             this.txtIDProducto.Name = "txtIDProducto";
             this.txtIDProducto.Size = new System.Drawing.Size(124, 22);
             this.txtIDProducto.TabIndex = 51;
-            
             // 
             // txtidCliente
             // 
@@ -188,7 +184,6 @@
             this.txtidCliente.Name = "txtidCliente";
             this.txtidCliente.Size = new System.Drawing.Size(124, 22);
             this.txtidCliente.TabIndex = 50;
-            
             // 
             // lbCompra1
             // 
@@ -210,7 +205,6 @@
             this.lbFechaCompra.Size = new System.Drawing.Size(113, 16);
             this.lbFechaCompra.TabIndex = 47;
             this.lbFechaCompra.Text = "FECHA COMPRA";
-          
             // 
             // lbIDProcto
             // 
@@ -221,7 +215,6 @@
             this.lbIDProcto.Size = new System.Drawing.Size(100, 16);
             this.lbIDProcto.TabIndex = 46;
             this.lbIDProcto.Text = "ID PRODUCTO";
-         
             // 
             // lbIDCliente
             // 
@@ -233,7 +226,6 @@
             this.lbIDCliente.TabIndex = 45;
             this.lbIDCliente.Text = "ID CLIENTE";
             this.lbIDCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            
             // 
             // button3
             // 
@@ -269,6 +261,7 @@
             this.Name = "Compras";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Compras_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

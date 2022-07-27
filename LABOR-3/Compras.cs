@@ -115,5 +115,10 @@ namespace LABOR_3
             txtFechaCompra.Text = "";
             
         }
+
+        private void Compras_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

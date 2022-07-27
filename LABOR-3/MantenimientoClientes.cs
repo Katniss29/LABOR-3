@@ -15,6 +15,9 @@ namespace LABOR_3
 {
     public partial class MantenimientoClientes : Form
     {
+
+        static NEGOCIO oNegocio = new NEGOCIO();
+        
         public MantenimientoClientes()
         {
             InitializeComponent();
@@ -30,34 +33,70 @@ namespace LABOR_3
         public void cargarGridDatosEstudiantes(DataTable informacionEstudiantes)
         {
             dataGridView1.Rows.Clear();
+          
+
+
             for (int i = 0; i < informacionEstudiantes.Rows.Count; i++)
             {
+                
                 int indice = dataGridView1.Rows.Add();
-                dataGridView1.Rows[indice].Cells[0].Value = informacionEstudiantes.Rows[i]["Cedula"];
-                dataGridView1.Rows[indice].Cells[1].Value = informacionEstudiantes.Rows[i]["Nombre"];
-                dataGridView1.Rows[indice].Cells[2].Value = informacionEstudiantes.Rows[i]["Apellido"];
-                dataGridView1.Rows[indice].Cells[3].Value = informacionEstudiantes.Rows[i]["Sexo"];
-                dataGridView1.Rows[indice].Cells[4].Value = informacionEstudiantes.Rows[i]["FechaNacimiento"];
+                dataGridView1.Rows[indice].Cells[0].Value = informacionEstudiantes.Rows[i]["IDCLIENTE"];
+                dataGridView1.Rows[indice].Cells[1].Value = informacionEstudiantes.Rows[i]["CEDULA"];
+                dataGridView1.Rows[indice].Cells[2].Value = informacionEstudiantes.Rows[i]["NOMBRE"];
+                dataGridView1.Rows[indice].Cells[3].Value = informacionEstudiantes.Rows[i]["APELLIDO"];
+                dataGridView1.Rows[indice].Cells[4].Value = informacionEstudiantes.Rows[i]["SEXO"];
+                dataGridView1.Rows[indice].Cells[5].Value = informacionEstudiantes.Rows[i]["FECHANACIMIENTO"];
+
+                
             }
         }
+
+        public static void crearCliente(DataTable informacionEstudiantes)
+        {
+            
+
+            for (int i = 0; i < informacionEstudiantes.Rows.Count; i++)
+            {
+                Clientes oClientes = new Clientes();
+
+
+                int codigo = int.Parse(informacionEstudiantes.Rows[i]["IDCLIENTE"].ToString());
+                String cedula = informacionEstudiantes.Rows[i]["CEDULA"].ToString();
+                String nombre = informacionEstudiantes.Rows[i]["NOMBRE"].ToString();
+                String apellido = informacionEstudiantes.Rows[i]["APELLIDO"].ToString();
+                String sexo = informacionEstudiantes.Rows[i]["SEXO"].ToString();
+                String fechaNacimiento = informacionEstudiantes.Rows[i]["FECHANACIMIENTO"].ToString();
+
+                
+                
+                oNegocio.cargarListaClientes(new Clientes(codigo, cedula, nombre,apellido,sexo,fechaNacimiento));
+            }
+        }
+
         public void refrescar()
         {
-            String[] datos = {  "Cedula", "Nombre", "Apellido", "Sexo", "FechaNacimiento" };
+            String[] datos = { "idcliente", "cedula", "nombre", "apellido", "sexo", "fechanacimiento" };
             DataTable informacionEstudiante = NEGOCIO.consultarTodosElementos("clientes", datos);
             cargarGridDatosEstudiantes(informacionEstudiante);
+            crearCliente(informacionEstudiante);
         }
 
         private void btnMostrarClientes_Click(object sender, EventArgs e)
         {
             refrescar();
+            oNegocio.cargarXML();
         }
 
         public bool validacionDeDatos()
         {
             bool datosCorrectos = true;
-            
-            
-            if (txtCedula.Text == String.Empty)
+
+            if (txtCodigo.Text == String.Empty)
+            {
+                datosCorrectos = false;
+            }
+
+            else if (txtCedula.Text == String.Empty)
             {
                 datosCorrectos = false;
             }
@@ -119,8 +158,8 @@ namespace LABOR_3
             {
                 if (validacionDeDatos() == true)
                 {
-                    String cadena = "INSERT INTO CLIENTES (CEDULA,NOMBRE,APELLIDO,SEXO,FECHANACIMIENTO) " +
-                                  "VALUES('" + txtCedula.Text + "', '" + txtNombre.Text + "', '" + txtApellido.Text + "','" + txtSexo.Text + "','" + txtFecha.Text + "')";
+                    String cadena = "INSERT INTO CLIENTES (IDCLIENTE, CEDULA,NOMBRE,APELLIDO,SEXO,FECHANACIMIENTO) " +
+                                  "VALUES('" + txtCodigo.Text + "', '" + txtCedula.Text + "', '" + txtNombre.Text + "', '" + txtApellido.Text + "','" + txtSexo.Text + "','" + txtFecha.Text + "')";
                     CONEXIO.conectarPostgresSQL();
                     NpgsqlCommand comando = new NpgsqlCommand(cadena, CONEXIO.conexion);
                     comando.ExecuteNonQuery();
@@ -130,6 +169,7 @@ namespace LABOR_3
 
                     refrescar();
                     CONEXIO.desconectarPostgresSQL();
+                   
 
                     MessageBox.Show("Cliente insertado con exito");
                 }
@@ -195,5 +235,12 @@ namespace LABOR_3
                 MessageBox.Show("ERROR");
             }
         }
+
+        private void MantenimientoClientes_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

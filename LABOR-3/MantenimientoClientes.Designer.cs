@@ -30,11 +30,6 @@
         {
             this.btnMostrarClientes = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clmCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clmFechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtFecha = new System.Windows.Forms.TextBox();
             this.txtCedula = new System.Windows.Forms.TextBox();
             this.txtSexo = new System.Windows.Forms.TextBox();
@@ -56,6 +51,14 @@
             this.lbNombreEliminar = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
+            this.clColumIdCLIENTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCedula = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmSexo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmFechaNacimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,6 +77,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clColumIdCLIENTE,
             this.clmCedula,
             this.clmNombre,
             this.clmApellido,
@@ -85,41 +89,6 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(530, 160);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // clmCedula
-            // 
-            this.clmCedula.HeaderText = "CEDULA";
-            this.clmCedula.MinimumWidth = 6;
-            this.clmCedula.Name = "clmCedula";
-            this.clmCedula.Width = 125;
-            // 
-            // clmNombre
-            // 
-            this.clmNombre.HeaderText = "NOMBRE";
-            this.clmNombre.MinimumWidth = 6;
-            this.clmNombre.Name = "clmNombre";
-            this.clmNombre.Width = 125;
-            // 
-            // clmApellido
-            // 
-            this.clmApellido.HeaderText = "APELLIDO";
-            this.clmApellido.MinimumWidth = 6;
-            this.clmApellido.Name = "clmApellido";
-            this.clmApellido.Width = 125;
-            // 
-            // clmSexo
-            // 
-            this.clmSexo.HeaderText = "SEXO";
-            this.clmSexo.MinimumWidth = 6;
-            this.clmSexo.Name = "clmSexo";
-            this.clmSexo.Width = 125;
-            // 
-            // clmFechaNacimiento
-            // 
-            this.clmFechaNacimiento.HeaderText = "FECHA NACIMIENTO";
-            this.clmFechaNacimiento.MinimumWidth = 6;
-            this.clmFechaNacimiento.Name = "clmFechaNacimiento";
-            this.clmFechaNacimiento.Width = 125;
             // 
             // txtFecha
             // 
@@ -323,11 +292,73 @@
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
+            // clColumIdCLIENTE
+            // 
+            this.clColumIdCLIENTE.HeaderText = "IDCLIENTE";
+            this.clColumIdCLIENTE.MinimumWidth = 6;
+            this.clColumIdCLIENTE.Name = "clColumIdCLIENTE";
+            this.clColumIdCLIENTE.Width = 125;
+            // 
+            // clmCedula
+            // 
+            this.clmCedula.HeaderText = "CEDULA";
+            this.clmCedula.MinimumWidth = 6;
+            this.clmCedula.Name = "clmCedula";
+            this.clmCedula.Width = 125;
+            // 
+            // clmNombre
+            // 
+            this.clmNombre.HeaderText = "NOMBRE";
+            this.clmNombre.MinimumWidth = 6;
+            this.clmNombre.Name = "clmNombre";
+            this.clmNombre.Width = 125;
+            // 
+            // clmApellido
+            // 
+            this.clmApellido.HeaderText = "APELLIDO";
+            this.clmApellido.MinimumWidth = 6;
+            this.clmApellido.Name = "clmApellido";
+            this.clmApellido.Width = 125;
+            // 
+            // clmSexo
+            // 
+            this.clmSexo.HeaderText = "SEXO";
+            this.clmSexo.MinimumWidth = 6;
+            this.clmSexo.Name = "clmSexo";
+            this.clmSexo.Width = 125;
+            // 
+            // clmFechaNacimiento
+            // 
+            this.clmFechaNacimiento.HeaderText = "FECHA NACIMIENTO";
+            this.clmFechaNacimiento.MinimumWidth = 6;
+            this.clmFechaNacimiento.Name = "clmFechaNacimiento";
+            this.clmFechaNacimiento.Width = 125;
+            // 
+            // txtCodigo
+            // 
+            this.txtCodigo.Location = new System.Drawing.Point(188, 113);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(124, 25);
+            this.txtCodigo.TabIndex = 43;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(93, 113);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 17);
+            this.label1.TabIndex = 42;
+            this.label1.Text = "CODIGO";
+            // 
             // MantenimientoClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1190, 700);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtNombreEliminar);
             this.Controls.Add(this.lbNombreEliminar);
@@ -356,6 +387,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MantenimientoClientes_FormClosing);
+            this.Load += new System.EventHandler(this.MantenimientoClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -387,10 +419,13 @@
         private System.Windows.Forms.Label lbNombreEliminar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clColumIdCLIENTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCedula;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmSexo;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmFechaNacimiento;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label label1;
     }
 }
